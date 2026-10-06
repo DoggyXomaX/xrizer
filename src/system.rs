@@ -868,7 +868,7 @@ impl vr::IVRSystem026_Interface for System {
                 .expect("Failed to get vulkan physical device") as _;
         }
     }
-    fn GetDXGIOutputInfo(&self, _: *mut i32) {
+    fn GetDXGIOutputInfo(&self, adapter: *mut i32) {
         if !adapter.is_null() {
             unsafe { *adapter = 0 };
         }
