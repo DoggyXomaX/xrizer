@@ -869,7 +869,9 @@ impl vr::IVRSystem026_Interface for System {
         }
     }
     fn GetDXGIOutputInfo(&self, _: *mut i32) {
-        todo!()
+        if !adapter.is_null() {
+            unsafe { *adapter = 0 };
+        }
     }
     fn GetD3D9AdapterIndex(&self) -> i32 {
         todo!()
